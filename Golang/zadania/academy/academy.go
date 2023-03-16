@@ -74,7 +74,7 @@ func FinalGrade(s Student) int {
 		return 1
 	}
 
-	percentAttended := AttendancePercentage(s.Attendace)
+	percentAttended := AttendancePercentage(s.Attendance)
 	var finalGrade int
 	switch {
 	case percentAttended >= 0.8:
