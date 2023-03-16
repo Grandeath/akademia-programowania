@@ -45,7 +45,7 @@ func AttendancePercentage(attendance []bool) float64 {
 		}
 	}
 	percentAttended := float64(peopleAttended) / float64(len(attendance))
-	rounded := math.Round(percentAttended*100) / 100
+	rounded := math.Round(percentAttended*1000) / 1000
 	return rounded
 }
 
