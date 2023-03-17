@@ -18,12 +18,11 @@ func AverageGrade(grades []int) int {
 	if len(grades) == 0 {
 		return 0
 	}
-	var averageGrade int
 	var sumGrades int
 	for _, grade := range grades {
 		sumGrades += grade
 	}
-	averageGrade = int(math.Round(float64(sumGrades) / float64(len(grades))))
+	averageGrade := int(math.Round(float64(sumGrades) / float64(len(grades))))
 	return averageGrade
 }
 
@@ -61,30 +60,20 @@ func AttendancePercentage(attendance []bool) float64 {
 // decreased by 1. If the student's attendance is below 60%, average
 // grade is 1 or project grade is 1, the final grade is 1.
 func FinalGrade(s Student) int {
-	if len(s.Grades) == 0 {
-		return 1
-	}
-	if s.Project == 1 {
-		return 1
-	}
-
 	averageGrade := AverageGrade(s.Grades)
+	percentAttended := AttendancePercentage(s.Attendance)
 
-	if averageGrade == 1 {
+	if len(s.Grades) == 0 || s.Project == 1 || averageGrade == 1 || percentAttended < 0.6 {
 		return 1
 	}
 
-	percentAttended := AttendancePercentage(s.Attendance)
-	var finalGrade int
 	switch {
 	case percentAttended >= 0.8:
-		finalGrade = int(math.Round(float64(averageGrade+s.Project) / 2.0))
-	case percentAttended < 0.6:
-		finalGrade = 1
+		return int(math.Round(float64(averageGrade+s.Project) / 2.0))
 	case percentAttended >= 0.6:
-		finalGrade = int(math.Round(float64(averageGrade+s.Project)/2.0)) - 1
+		return int(math.Round(float64(averageGrade+s.Project)/2.0)) - 1
 	}
-	return finalGrade
+	return 1
 }
 
 // GradeStudents returns a map of final grades for a given slice of
