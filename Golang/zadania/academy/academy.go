@@ -80,9 +80,6 @@ func FinalGrade(s Student) int {
 // Student structs. The key is a student's name and the value is a
 // final grade.
 func GradeStudents(students []Student) map[string]uint8 {
-	if len(students) == 0 {
-		return map[string]uint8{}
-	}
 	gradeStudents := make(map[string]uint8, len(students))
 	for _, student := range students {
 		gradeStudents[student.Name] = uint8(FinalGrade(student))
