@@ -1,3 +1,7 @@
+package fetcher
+
+import "io"
+
 type Response struct {
 	Data struct {
 		Children []struct {
