@@ -6,8 +6,8 @@ import (
 )
 
 func main() {
-	var f fetcher.RedditFetcher
-	var w io.Writer
+	var f fetcher.RedditFetcher // do not change
+	var w io.Writer             // do not change
 
 	f.Fetch()
 	f.Save(w)
