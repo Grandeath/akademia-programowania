@@ -17,6 +17,6 @@ type Response struct {
 }
 
 type RedditFetcher interface {
-	Fetch(context.Context) error
+	Fetch(context.Context, string) error
 	Save(io.Writer) error
 }

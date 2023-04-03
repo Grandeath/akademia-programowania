@@ -12,33 +12,29 @@ import (
 	"time"
 )
 
-const (
-	host = "https://www.reddit.com/r/golang.json"
-)
+var hosts = [][]string{
+	{"https://www.reddit.com/r/programming.json", "output1"},
+	{"https://www.reddit.com/r/golang.json", "output2"},
+	{"https://www.reddit.com/r/java.json", "output3"},
+}
 
 func main() {
-	var f fetcher.RedditFetcher // do not change
-	var w io.Writer             // do not change
-
-	f = &RedditClient{}
-
-	if err := f.Fetch(context.Background()); err != nil {
-		log.Fatal(err)
+	ch := make(chan string)
+	for _, host := range hosts {
+		go FetchAndSave(host[0], host[1], ch)
 	}
-
-	if err := f.Save(w); err != nil {
-		log.Fatal(err)
+	for range hosts {
+		fmt.Println(<-ch)
 	}
-
 }
 
 type RedditClient struct {
 	data fetcher.Response
 }
 
-func (r *RedditClient) Fetch(ctx context.Context) error {
+func (r *RedditClient) Fetch(ctx context.Context, host string) error {
 	client := &http.Client{}
-	ctx, cancel := context.WithTimeout(ctx, time.Duration(time.Second*5))
+	ctx, cancel := context.WithTimeout(ctx, time.Duration(time.Second*10))
 	defer cancel()
 	req, err := http.NewRequestWithContext(ctx, http.MethodGet, host, http.NoBody)
 	if err != nil {
@@ -62,16 +58,33 @@ func (r *RedditClient) Fetch(ctx context.Context) error {
 	return err
 }
 func (r RedditClient) Save(w io.Writer) error {
-	file, err := os.Create("output.txt")
-	if err != nil {
-		log.Fatal(err)
-	}
-	defer file.Close()
 
 	for _, child := range r.data.Data.Children {
-		if _, err := file.WriteString(fmt.Sprintf("%s\n%s\n", child.Data.Title, child.Data.URL)); err != nil {
+		if _, err := fmt.Fprintf(w, "%s\n%s\n", child.Data.Title, child.Data.URL); err != nil {
 			return err
 		}
 	}
 	return nil
+}
+
+func FetchAndSave(host string, fileNmae string, ch chan<- string) {
+	var f fetcher.RedditFetcher // do not change
+	var w io.Writer             // do not change
+
+	f = &RedditClient{}
+	file, err := os.Create(fileNmae)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer file.Close()
+	w = file
+
+	if err := f.Fetch(context.Background(), host); err != nil {
+		log.Fatal(err)
+	}
+
+	if err := f.Save(w); err != nil {
+		log.Fatal(err)
+	}
+	ch <- fmt.Sprintf("Request complted: %s", host)
 }

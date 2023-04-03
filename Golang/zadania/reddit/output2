@@ -2,26 +2,26 @@ Who's Hiring? - March 2023
 https://www.reddit.com/r/golang/comments/11fijrn/whos_hiring_march_2023/
 Animated diagrams with D2, a text-to-diagram language written in Go
 https://d2lang.com/blog/animation
-Postfix completions for methods like functions in VS Code
-https://www.reddit.com/r/golang/comments/12aheoy/postfix_completions_for_methods_like_functions_in/
-Debugging concurrency: Adding millisecond sleeps randomly?
-https://www.reddit.com/r/golang/comments/12agjqq/debugging_concurrency_adding_millisecond_sleeps/
-Go stdlib regexp package: A DFA experiment
-https://www.reddit.com/r/golang/comments/12aesly/go_stdlib_regexp_package_a_dfa_experiment/
 slogt bridges stdlib testing.T and slog
 https://www.reddit.com/r/golang/comments/12ajonr/slogt_bridges_stdlib_testingt_and_slog/
+Debugging concurrency: Adding millisecond sleeps randomly?
+https://www.reddit.com/r/golang/comments/12agjqq/debugging_concurrency_adding_millisecond_sleeps/
+Postfix completions for methods like functions in VS Code
+https://www.reddit.com/r/golang/comments/12aheoy/postfix_completions_for_methods_like_functions_in/
 Using DBStats To Test for Connection Leak in Golang
 https://medium.com/@iamninad/preventing-db-connection-leak-in-golang-fcf620469aad
-Poll: Did Go add generics just for the critics?
-https://changelog.social/@gotime/110135213577303103
+Go stdlib regexp package: A DFA experiment
+https://www.reddit.com/r/golang/comments/12aesly/go_stdlib_regexp_package_a_dfa_experiment/
+`@ory/client` vs. `@ory/kratos-client` and others
+https://www.reddit.com/r/golang/comments/12aoheb/oryclient_vs_orykratosclient_and_others/
 What would you rewrite in Golang?
 https://www.reddit.com/r/golang/comments/12alic4/what_would_you_rewrite_in_golang/
 Web Development em Go - Parte 08 - Template Functions (Language: PT-BR)
 https://youtube.com/watch?v=fb-2YFqZ6Ug&amp;feature=share
-ResultGroup: Go lib for concurrent tasks &amp; errors management
-https://www.reddit.com/r/golang/comments/129smfi/resultgroup_go_lib_for_concurrent_tasks_errors/
 io.MultiWriter only writes to first writer
 https://www.reddit.com/r/golang/comments/12a76uy/iomultiwriter_only_writes_to_first_writer/
+ResultGroup: Go lib for concurrent tasks &amp; errors management
+https://www.reddit.com/r/golang/comments/129smfi/resultgroup_go_lib_for_concurrent_tasks_errors/
 Web scraping with Go
 https://www.reddit.com/r/golang/comments/129n1g4/web_scraping_with_go/
 Why methods types are different
