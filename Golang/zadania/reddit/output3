@@ -1,21 +1,27 @@
 [PSA]/r/java is not for programming help, learning questions, or installing Java questions
 https://www.reddit.com/r/java/comments/j7h9er/psarjava_is_not_for_programming_help_learning/
-Insert without Select using JPA
-https://medium.com/predictly-on-tech/insert-without-select-using-jpa-a88e5db46e85
+Using VisualVM JDBC profiler
+https://www.reddit.com/r/java/comments/12blkw5/using_visualvm_jdbc_profiler/
+“Preview Features: A Look Back &amp; A Look Ahead” with Alex Buckley - Inside Java Podcast
+https://inside.java/2023/03/21/podcast-030/
+how do views work exactly with spring boot and hibernate
+https://www.reddit.com/r/java/comments/12bneln/how_do_views_work_exactly_with_spring_boot_and/
 An Intellij IDEA plugin to inspect Swing components at runtime
 https://github.com/ohle/Swingspector
-Why does Java not use compact dictionaries?
-https://www.reddit.com/r/java/comments/12a98o0/why_does_java_not_use_compact_dictionaries/
 SirixDB - an embeddable, evolutionary database system
 https://www.reddit.com/r/java/comments/12aog9b/sirixdb_an_embeddable_evolutionary_database_system/
-Apache Empire-Db: Full SQL Freedom for Java
-https://empire-db.apache.org/pages/home.html
+Insert without Select using JPA
+https://medium.com/predictly-on-tech/insert-without-select-using-jpa-a88e5db46e85
+Why does Java not use compact dictionaries?
+https://www.reddit.com/r/java/comments/12a98o0/why_does_java_not_use_compact_dictionaries/
 How to Work at Java Platform Group
 https://www.reddit.com/r/java/comments/12aevnq/how_to_work_at_java_platform_group/
-Use Piranha Embedded as a light-weight Servlet runner
-https://www.manorrock.com/blog/2023/03/24/use_piranha_embedded_as_a_lightweight_servlet_runner.html
+Apache Empire-Db: Full SQL Freedom for Java
+https://empire-db.apache.org/pages/home.html
 Exploring the updated Neo4j-Java-Driver — finding Trees in the Forest
 https://medium.com/neo4j/exploring-the-updated-neo4j-java-driver-a79a42ec451f
+Use Piranha Embedded as a light-weight Servlet runner
+https://www.manorrock.com/blog/2023/03/24/use_piranha_embedded_as_a_lightweight_servlet_runner.html
 Classic Nim Game in Swing
 https://github.com/jbock-java/play-nim
 What do you think about ZGC being the JDK's default GC?
@@ -44,9 +50,3 @@ For daily Java programmers: after almost one decade of Java 8, are streams and l
 https://www.reddit.com/r/java/comments/1272916/for_daily_java_programmers_after_almost_one/
 Dropwizard 3.0.0 and 4.0.0 have been released
 https://jvm.social/@dropwizard/110114501892964091
-Java 21's New (Sequenced) Collections
-https://www.youtube.com/watch?v=9G_0el3RWPE
-GlassFish 7.0.3 released!
-https://github.com/eclipse-ee4j/glassfish/releases/tag/7.0.3
-The best way to use the Spring Data JPA Specification
-https://vladmihalcea.com/spring-data-jpa-specification/

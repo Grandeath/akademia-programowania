@@ -72,5 +72,29 @@ func TestSize(t *testing.T) {
 }
 
 func TestMoveToPoint(t *testing.T) {
-	
+	testCases := []struct {
+		name     string
+		ship     Ship
+		point    Point
+		wantShip Ship
+	}{
+		{
+			name:     "No movement",
+			ship:     Ship{Point{1, 1}, Point{2, 2}},
+			point:    Point{},
+			wantShip: Ship{Point{0, 0}, Point{1, 1}},
+		},
+		{
+			name:     "Normal movement",
+			ship:     Ship{Point{1, 1}, Point{2, 2}},
+			point:    Point{2, 2},
+			wantShip: Ship{Point{2, 2}, Point{3, 3}},
+		},
+	}
+	for _, tc := range testCases {
+		t.Run(tc.name, func(t *testing.T) {
+			gotShip := tc.ship.MoveTo(tc.point)
+			assert.Equal(t, tc.wantShip, gotShip)
+		})
+	}
 }

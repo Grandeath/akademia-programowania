@@ -1,50 +1,50 @@
-Django 4.2 released
-https://www.djangoproject.com/weblog/2023/apr/03/django-42-released/
+Safari releases are development hell
+https://www.construct.net/en/blogs/ashleys-blog-2/safari-releases-development-1616
+How SerenityOS declares ssize_t
+https://awesomekling.github.io/How-SerenityOS-declares-ssize_t/
+Google to cut down on employee laptops, services and staplers
+https://www.cnbc.com/2023/04/03/google-to-cut-down-on-employee-laptops-services-and-staplers-to-save.html
 Every 7.8μs your computer’s memory has a hiccup
 https://blog.cloudflare.com/every-7-8us-your-computers-memory-has-a-hiccup/
+ASP.NET Core Route Tooling Enhancements in .NET 8 - .NET Blog
+https://devblogs.microsoft.com/dotnet/aspnet-core-route-tooling-dotnet-8/
+10,000 hours and the Scientist-Programmer
+https://medium.com/@moh.aboelez/10-000-hours-and-the-scientist-programmer-a1056db3b726?sk=34980653cfe7ddd27b7b1237f2a561db
+Spotting and Avoiding Heap Fragmentation in Rust Applications
+https://www.svix.com/blog/heap-fragmentation-in-rust-applications/
+XUL layout is gone (in Firefox)
+https://crisal.io/words/2023/03/30/xul-layout-is-gone.html
+CFP Open – Refereed Track Presentations
+https://lpc.events/blog/current/index.php/2023/04/04/cfp-open-refereed-track-presentations-2/
+Django 4.2 released
+https://www.djangoproject.com/weblog/2023/apr/03/django-42-released/
+PHP's Frankenstein Arrays
+https://vazaha.blog/en/9/php-frankenstein-arrays
+Visual Studio Code is designed to fracture
+https://ghuntley.com/fracture/
+Prompt Engineering Shouldn't Exist
+https://matt-rickard.com/prompt-engineering-shouldnt-exist
+New tool from curl creator - trurl - command line tool for URL parsing and manipulation
+https://github.com/curl/trurl
+How AI code completions "fill-in-the-middle"
+https://codeium.com/blog/why-code-completion-needs-fill-in-the-middle
+plz CLI - a tool for people such as myself who can't remember CLI commands
+https://plz.software/
+Hyland Software Lays Off 1,000 Workers
+https://www.clevescene.com/news/hyland-software-lays-off-1000-workers-41718745
+Installing Python: the bare minimum you can get away with
+https://bitecode.substack.com/p/installing-python-the-bare-minimum
 Introducing Slint 1.0 - The Next-Generation Native GUI Toolkit for Desktop and Embedded
 https://slint-ui.com/blog/announcing-slint-1.0.html
-Parquet: more than just "Turbo CSV"
-https://csvbase.com/blog/3
-Switching from Engineering to Management
-https://vadimkravcenko.com/en/switching-from-engineering-to-management/
-How Software Companies Die (Beehive Story)
-https://homepages.uc.edu/~thomam/Articles/HowSoftwareCompaniesDie.pdf
 Qt 6.5 LTS released
 https://www.qt.io/blog/qt-6.5-lts-released
-Magnon-based computation could signal computing paradigm shift
-https://phys.org/news/2023-03-magnon-based-paradigm-shift.html
-Compromising: A Guide for Developers
-https://johnnyreilly.com/compromising-guide-for-developers
-Self Identifying JavaScript Source Maps: The Case for Debug IDs
-https://sentry.engineering/blog/the-case-for-debug-ids
-Reflections on 10,000 Hours of DevOps
-https://matt-rickard.com/reflections-on-10-000-hours-of-devops
-How to Make a Raspberry Pi Print Server
-https://lededitpro.com/raspberry-pi-print-server/
-BSP Trees: The Magic Behind Collision Detection in Quake
-https://www.youtube.com/watch?v=wLHXn8IlAiA
+Turn your JSON into a database
+https://www.daba.so
 The Missing Semester of CS
 https://matt-rickard.com/the-missing-semester-of-cs
-trurl manipulates URLs
-https://daniel.haxx.se/blog/2023/04/03/introducing-trurl/
-How WebAssembly is accelerating new web functionality
-https://blog.chromium.org/2023/04/how-webassembly-is-accelerating-new-web.html
-Creating animated diagrams with text
-https://d2lang.com/blog/animation
-Porting Rust to a new microcontroller (CH32V003)
-https://noxim.xyz/blog/rust-ch32v003/
-Reverse Engineering LED Lights with Python to Turn Your Monitor into an 'Ambient Monitor'
-https://medium.com/@reaminated/convert-your-pc-monitor-to-an-immersive-ambient-monitor-with-led-lights-and-python-4235882b4d6d
-A Safer High Performance AV1 Decoder
-https://www.memorysafety.org/blog/safer-av1-decoder/
-A chat GPT program written in POWER-KI (free, souce code ..)
-https://github.com/POWER-KI/GPT/tree/main/DEMO-01
-Brief history: From teletypes to terminal emulators‍
-https://www.warp.dev/blog/what-happens-when-you-open-a-terminal-and-enter-ls
-Improving code readability in functional C# using Linq to Monad
-https://amin-mousavi.dev/improving-code-readability-in-functional-c-using-linq-to-monad-d4c73194e9b1?source=friends_link&amp;sk=15f679f27601538027df0d9ce6042685
-Interview with Isaac Newton AI
-https://youtu.be/XXLyGdNlV7g
-Google Code Jam and Kick Start 2023 Is Cancelled. Is the trend of competitive programming coming to an end?
-https://codeforces.com/blog/entry/113154
+Parquet: more than just "Turbo CSV"
+https://csvbase.com/blog/3
+Draggable Element Using HTML CSS JavaScript |
+https://youtu.be/4-5KDvnKWd0
+How Quora runs on MySQL
+https://quoraengineering.quora.com/Optimizing-the-databases-at-Quora

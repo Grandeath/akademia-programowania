@@ -5,7 +5,6 @@ import (
 	"encoding/json"
 	"fmt"
 	"io"
-	"log"
 	"net/http"
 	"os"
 	"reddit/fetcher"
@@ -74,17 +73,20 @@ func FetchAndSave(host string, fileNmae string, ch chan<- string) {
 	f = &RedditClient{}
 	file, err := os.Create(fileNmae)
 	if err != nil {
-		log.Fatal(err)
+		ch <- fmt.Sprintf("Got error: %s", err)
+		return
 	}
 	defer file.Close()
 	w = file
 
 	if err := f.Fetch(context.Background(), host); err != nil {
-		log.Fatal(err)
+		ch <- fmt.Sprintf("Got error: %s", err)
+		return
 	}
 
 	if err := f.Save(w); err != nil {
-		log.Fatal(err)
+		ch <- fmt.Sprintf("Got error: %s", err)
+		return
 	}
 	ch <- fmt.Sprintf("Request complted: %s", host)
 }
