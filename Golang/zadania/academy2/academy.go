@@ -1,6 +1,8 @@
 package academy
 
-import "github.com/pkg/errors"
+import (
+	"github.com/pkg/errors"
+)
 
 var ErrInvalidGrade = errors.New("invalid grade")
 var ErrStudentNotFound = errors.New("student not found")

@@ -1,50 +1,50 @@
-Safari releases are development hell
-https://www.construct.net/en/blogs/ashleys-blog-2/safari-releases-development-1616
-How SerenityOS declares ssize_t
-https://awesomekling.github.io/How-SerenityOS-declares-ssize_t/
-Google to cut down on employee laptops, services and staplers
-https://www.cnbc.com/2023/04/03/google-to-cut-down-on-employee-laptops-services-and-staplers-to-save.html
-Every 7.8μs your computer’s memory has a hiccup
-https://blog.cloudflare.com/every-7-8us-your-computers-memory-has-a-hiccup/
-ASP.NET Core Route Tooling Enhancements in .NET 8 - .NET Blog
-https://devblogs.microsoft.com/dotnet/aspnet-core-route-tooling-dotnet-8/
-10,000 hours and the Scientist-Programmer
-https://medium.com/@moh.aboelez/10-000-hours-and-the-scientist-programmer-a1056db3b726?sk=34980653cfe7ddd27b7b1237f2a561db
-Spotting and Avoiding Heap Fragmentation in Rust Applications
-https://www.svix.com/blog/heap-fragmentation-in-rust-applications/
-XUL layout is gone (in Firefox)
-https://crisal.io/words/2023/03/30/xul-layout-is-gone.html
-CFP Open – Refereed Track Presentations
-https://lpc.events/blog/current/index.php/2023/04/04/cfp-open-refereed-track-presentations-2/
-Django 4.2 released
-https://www.djangoproject.com/weblog/2023/apr/03/django-42-released/
-PHP's Frankenstein Arrays
-https://vazaha.blog/en/9/php-frankenstein-arrays
-Visual Studio Code is designed to fracture
-https://ghuntley.com/fracture/
-Prompt Engineering Shouldn't Exist
-https://matt-rickard.com/prompt-engineering-shouldnt-exist
-New tool from curl creator - trurl - command line tool for URL parsing and manipulation
-https://github.com/curl/trurl
-How AI code completions "fill-in-the-middle"
-https://codeium.com/blog/why-code-completion-needs-fill-in-the-middle
-plz CLI - a tool for people such as myself who can't remember CLI commands
-https://plz.software/
-Hyland Software Lays Off 1,000 Workers
-https://www.clevescene.com/news/hyland-software-lays-off-1000-workers-41718745
-Installing Python: the bare minimum you can get away with
-https://bitecode.substack.com/p/installing-python-the-bare-minimum
-Introducing Slint 1.0 - The Next-Generation Native GUI Toolkit for Desktop and Embedded
-https://slint-ui.com/blog/announcing-slint-1.0.html
-Qt 6.5 LTS released
-https://www.qt.io/blog/qt-6.5-lts-released
-Turn your JSON into a database
-https://www.daba.so
-The Missing Semester of CS
-https://matt-rickard.com/the-missing-semester-of-cs
-Parquet: more than just "Turbo CSV"
-https://csvbase.com/blog/3
-Draggable Element Using HTML CSS JavaScript |
-https://youtu.be/4-5KDvnKWd0
-How Quora runs on MySQL
-https://quoraengineering.quora.com/Optimizing-the-databases-at-Quora
+Why are there so many tech layoffs, and why should we be worried? Stanford scholar explains
+https://news.stanford.edu/2022/12/05/explains-recent-tech-layoffs-worried
+I interviewed Bruno Lowagie, who successfully commercialized his FOSS library, iText, between 2008 and 2018, for Code Code Ship: “Commercializing iText had a significant impact on the quality of the library”
+https://codecodeship.com/blog/2023-04-07-bruno-lowagie
+JSON vs XML
+https://corecursive.com/json-vs-xml-douglas-crockford/
+Agile is the Spoiled Child of a Decade of Easy Money
+https://blog.bennett.ink/agile-is-the-spoiled-child-of-a-decade-of-easy-money-7c94bfc1ddf2
+I build a PHP library to manage and execute concurrent tasks using krakjoe/parallel extension. The library works even on PHP environments where the parallel extension is not available. Feel free to test it and leave your comments. Any recommendation is appreciated.
+https://github.com/hschimpf/parallel-sdk
+Rest in peace, Reddit Compact
+https://pdx.su/blog/2023-04-06-rip-reddit-compact
+"We modified llama.cpp to load weights using mmap() instead of C++ standard I/O. That enabled us to load LLaMA 100x faster using half as much memory."
+https://justine.lol/mmap/
+Advantages &amp; Misconceptions of Apache Kafka
+https://bitestreams.com/blog/advantages_misconceptions_apache_kafka/
+C Strings and a slow descent to madness
+https://www.deusinmachina.net/p/c-strings-and-my-slow-descent-to
+GitHub Copilot for Docs – putting the “fun” into RTFM
+https://christianheilmann.com/2023/04/05/github-copilot-for-docs-putting-the-fun-into-rtfm/
+Gernot's List of Systems Benchmarking Crimes
+http://gernot-heiser.org/benchmarking-crimes.html
+What positions are Similar to a digital transformation specialist
+https://www.innopharmaeducation.com/news/what-does-a-digital-transformation-specialist-do
+Software Engineering using C++ (Legacy course)
+https://www.youtube.com/watch?v=zgGv6IXtOIY&amp;list=PLS9G7A6kaaHPEoLQnSSqJTdaHwr9d1dj2
+My first Firefox extension
+https://nfrankel.medium.com/my-first-firefox-extension-4cf41413552e?source=friends_link&amp;sk=bcc8fdce043ace250c9b8619fea39469
+High School Hackathon Event Organized by Students in South Carolina
+https://www.carolinahacks.com/
+Rust's Golden Rule
+https://steveklabnik.com/writing/rusts-golden-rule
+How To Make A Circular Progress Bar With Html Css and Javascript
+https://youtu.be/p1LyqMANORo
+Announcing WCGI: WebAssembly + CGI
+https://wasmer.io/posts/announcing-wcgi
+What if writing tests was a joyful experience
+https://blog.janestreet.com/the-joy-of-expect-tests/
+The gotcha of unhandled promise rejections
+https://jakearchibald.com/2023/unhandled-rejections/
+Chrome ships WebGPU (available by default in Chrome 113)
+https://developer.chrome.com/blog/webgpu-release/
+Video Rendering with Node.js and FFmpeg
+https://creatomate.com/blog/video-rendering-with-nodejs-and-ffmpeg
+Overview of parallax effect in Diablo 2 by Simon schreibt.
+http://simonschreibt.de/gat/dont-starve-diablo-parallax-7/
+Building GitHub with Ruby and Rails | The GitHub Blog
+https://github.blog/2023-04-06-building-github-with-ruby-and-rails/
+Operational Minimalism for Engineering teams - Say no to advanced features, and embrace simplicity on your way to operational bliss.
+https://www.engstuff.dev/p/operational-minimalism

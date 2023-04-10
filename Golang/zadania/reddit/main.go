@@ -5,9 +5,11 @@ import (
 	"encoding/json"
 	"fmt"
 	"io"
+	"log"
 	"net/http"
 	"os"
 	"reddit/fetcher"
+	"sync"
 	"time"
 )
 
@@ -18,13 +20,12 @@ var hosts = [][]string{
 }
 
 func main() {
-	ch := make(chan string)
+	var wg sync.WaitGroup
 	for _, host := range hosts {
-		go FetchAndSave(host[0], host[1], ch)
+		wg.Add(1)
+		go FetchAndSave(host[0], host[1], &wg)
 	}
-	for range hosts {
-		fmt.Println(<-ch)
-	}
+	wg.Wait()
 }
 
 type RedditClient struct {
@@ -66,27 +67,28 @@ func (r RedditClient) Save(w io.Writer) error {
 	return nil
 }
 
-func FetchAndSave(host string, fileNmae string, ch chan<- string) {
+func FetchAndSave(host string, fileNmae string, wg *sync.WaitGroup) {
 	var f fetcher.RedditFetcher // do not change
 	var w io.Writer             // do not change
 
 	f = &RedditClient{}
 	file, err := os.Create(fileNmae)
 	if err != nil {
-		ch <- fmt.Sprintf("Got error: %s", err)
+		log.Printf("Got error: %s", err)
 		return
 	}
 	defer file.Close()
 	w = file
 
 	if err := f.Fetch(context.Background(), host); err != nil {
-		ch <- fmt.Sprintf("Got error: %s", err)
+		log.Printf("Got error: %s", err)
 		return
 	}
 
 	if err := f.Save(w); err != nil {
-		ch <- fmt.Sprintf("Got error: %s", err)
+		log.Printf("Got error: %s", err)
 		return
 	}
-	ch <- fmt.Sprintf("Request complted: %s", host)
+	log.Printf("Request completed: %s", host)
+	wg.Done()
 }

@@ -1,52 +1,52 @@
 Who's Hiring? - April 2023
 https://www.reddit.com/r/golang/comments/12aq7tb/whos_hiring_april_2023/
-Securing Your Golang Application: Unleashing the Power of Authentication and Authorization
-https://www.reddit.com/r/golang/comments/12bbahn/securing_your_golang_application_unleashing_the/
-PTerm v0.12.58: You can now use beautiful structured logging for your projects!
-https://github.com/pterm/pterm/tree/master/_examples/logger/default
-GoLand 2023.1 has been released!
-https://www.reddit.com/r/golang/comments/12bgcgc/goland_20231_has_been_released/
-Who is using Go to build web sites and applications?
-https://www.reddit.com/r/golang/comments/12bhbp0/who_is_using_go_to_build_web_sites_and/
-Why did Go choose to break the classic C frame?
-https://www.reddit.com/r/golang/comments/12b8eu8/why_did_go_choose_to_break_the_classic_c_frame/
-Best Resource to learn Web Go-Gin framework.
-https://www.reddit.com/r/golang/comments/12be50b/best_resource_to_learn_web_gogin_framework/
-Build GitHub sign-in with Go and Logto
-https://docs.logto.io/tutorial/how-to-build-github-sign-in-with-go-and-logto/
-Open source project ideas
-https://www.reddit.com/r/golang/comments/12blg58/open_source_project_ideas/
-Socket Options &amp; Go: Multiple Listeners, One Port
-https://medium.com/@madflojo/socket-options-go-multiple-listeners-one-port-7e5257044bb1
-Compile windows(x64) dll inside of linux(wsl)
-https://www.reddit.com/r/golang/comments/12bp3yb/compile_windowsx64_dll_inside_of_linuxwsl/
-NATS &amp; Kafka comparison
-https://synadia.com/blog/nats-io-total-cost-of-ownership-tco-comparison-with-kafka
-Was wondering if someone that has hired developers in the past could take a look at my resume and see if it has got enough to start submitting for an entry-level positon.
-https://www.reddit.com/r/golang/comments/12ayfgu/was_wondering_if_someone_that_has_hired/
-A tool to help you manage your go imports
-https://www.reddit.com/r/golang/comments/12bextq/a_tool_to_help_you_manage_your_go_imports/
-What would you rewrite in Golang?
-https://www.reddit.com/r/golang/comments/12alic4/what_would_you_rewrite_in_golang/
-Dynamically pass the SQL parameter(s) in Go
-https://www.reddit.com/r/golang/comments/12axvf4/dynamically_pass_the_sql_parameters_in_go/
-Animated diagrams with D2, a text-to-diagram language written in Go
-https://d2lang.com/blog/animation
-Using Imgui with Go
-https://www.reddit.com/r/golang/comments/12basj0/using_imgui_with_go/
-A guide for evaluating tracing tools
-https://www.reddit.com/r/golang/comments/12bdd8q/a_guide_for_evaluating_tracing_tools/
-Exit go program, as soon as a function starts.
-https://www.reddit.com/r/golang/comments/12b6rrf/exit_go_program_as_soon_as_a_function_starts/
-Debugging concurrency: Adding millisecond sleeps randomly?
-https://www.reddit.com/r/golang/comments/12agjqq/debugging_concurrency_adding_millisecond_sleeps/
-slogt bridges stdlib testing.T and slog
-https://www.reddit.com/r/golang/comments/12ajonr/slogt_bridges_stdlib_testingt_and_slog/
-Postfix completions for methods like functions in VS Code
-https://www.reddit.com/r/golang/comments/12aheoy/postfix_completions_for_methods_like_functions_in/
-mgmt - https://github.com/purpleidea/mgmt
-https://www.reddit.com/r/golang/comments/12b3din/mgmt_httpsgithubcompurpleideamgmt/
-Go stdlib regexp package: A DFA experiment
-https://www.reddit.com/r/golang/comments/12aesly/go_stdlib_regexp_package_a_dfa_experiment/
-Google's Firebase Auth in Go, no npm please
-https://www.reddit.com/r/golang/comments/12az73t/googles_firebase_auth_in_go_no_npm_please/
+Atlas v0.10.1 | New Analyzers and Cloud Linting Configuration
+https://atlasgo.io/blog/2023/04/04/cloud-lint-config
+Best boilerplate web application to get going for a production app
+https://www.reddit.com/r/golang/comments/12egki2/best_boilerplate_web_application_to_get_going_for/
+Delve v1.20.2 is out now
+https://www.reddit.com/r/golang/comments/12dqpah/delve_v1202_is_out_now/
+What platform do y’all like to use when deploying Go applications?
+https://www.reddit.com/r/golang/comments/12ea7i1/what_platform_do_yall_like_to_use_when_deploying/
+Python + Go architecture
+https://www.reddit.com/r/golang/comments/12e4z99/python_go_architecture/
+Golang audiobooks?
+https://www.reddit.com/r/golang/comments/12egeg7/golang_audiobooks/
+The reason for no parameterized methods
+https://www.reddit.com/r/golang/comments/12ejo96/the_reason_for_no_parameterized_methods/
+seekr - new golang OSINT tool
+https://github.com/seekr-osint/seekr
+Trying to type cast an interface{} in a struct{} to a spectific type (which is a struct) but fails.
+https://www.reddit.com/r/golang/comments/12ec4w5/trying_to_type_cast_an_interface_in_a_struct_to_a/
+Converting an interface{} to a struct
+https://www.reddit.com/r/golang/comments/12dorfy/converting_an_interface_to_a_struct/
+Go vs Java, TS or C# in a medium size professional project
+https://www.reddit.com/r/golang/comments/12dx03h/go_vs_java_ts_or_c_in_a_medium_size_professional/
+go-mask: Library for masking sensitive information
+https://www.reddit.com/r/golang/comments/12dnbf8/gomask_library_for_masking_sensitive_information/
+Help: unable to run go. could not import strconv (EOF)
+https://www.reddit.com/r/golang/comments/12ea0jp/help_unable_to_run_go_could_not_import_strconv_eof/
+What existing libraries are there for implementing Kubernetes liveness and readiness probes?
+https://www.reddit.com/r/golang/comments/12dhjjm/what_existing_libraries_are_there_for/
+Better golang prelude
+https://www.reddit.com/r/golang/comments/12dz3t2/better_golang_prelude/
+should i switch form node to go?
+https://www.reddit.com/r/golang/comments/12eh4na/should_i_switch_form_node_to_go/
+Realistically speaking, which type of programming jobs can juniors apply for programming in Go?
+https://www.reddit.com/r/golang/comments/12dbk3n/realistically_speaking_which_type_of_programming/
+srctx: a LSIF parser for understanding what happened in every lines of your code
+https://www.reddit.com/r/golang/comments/12di427/srctx_a_lsif_parser_for_understanding_what/
+Recommended books and/or text tutorials for getting started with go 1.18+
+https://www.reddit.com/r/golang/comments/12dx61k/recommended_books_andor_text_tutorials_for/
+go pprof analysis
+https://www.reddit.com/r/golang/comments/12d5psk/go_pprof_analysis/
+SSE with a redis subscription
+https://www.reddit.com/r/golang/comments/12dwn5y/sse_with_a_redis_subscription/
+Advices on microservices / database stuff (in Go)
+https://www.reddit.com/r/golang/comments/12dt1sk/advices_on_microservices_database_stuff_in_go/
+Need some help
+https://www.reddit.com/r/golang/comments/12ds8um/need_some_help/
+weird interface{}/pointer nil check behavior inside function
+https://www.reddit.com/r/golang/comments/12d18qt/weird_interfacepointer_nil_check_behavior_inside/
+Go channels through Redis List
+https://www.reddit.com/r/golang/comments/12dk4kb/go_channels_through_redis_list/
