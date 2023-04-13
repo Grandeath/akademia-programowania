@@ -1,5 +1,6 @@
 package academy
 
+//go:generate mockery --name Repository
 type Repository interface {
 	List(year uint8) (names []string, err error)
 	Get(name string) (Student, error)

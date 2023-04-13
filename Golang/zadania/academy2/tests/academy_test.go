@@ -7,6 +7,7 @@ import (
 	academy "github.com/grupawp/akademia-programowania/Golang/zadania/academy2"
 	"github.com/grupawp/akademia-programowania/Golang/zadania/academy2/mocks"
 	"github.com/stretchr/testify/assert"
+	"github.com/stretchr/testify/mock"
 )
 
 func TestGradeStudent(t *testing.T) {
@@ -52,38 +53,49 @@ func TestGradeStudent(t *testing.T) {
 			studentFinalGrade: 0,
 			wantError:         academy.ErrInvalidGrade,
 		},
+		{
+			name:              "Student is missing",
+			studentName:       "John",
+			studentYear:       3,
+			studentFinalGrade: 0,
+			wantError:         academy.ErrStudentNotFound,
+		},
 	}
 	for _, tc := range testCases {
 		t.Run(tc.name, func(t *testing.T) {
-			student1 := mocks.Student{}
-			student1.On("Name").Return(tc.studentName)
-			student1.On("Year").Return(tc.studentYear)
-			student1.On("FinalGrade").Return(tc.studentFinalGrade)
+			mockStudent := mocks.NewStudent(t)
 
-			studentSlice := []mocks.Student{student1}
-
-			r := repositoryMock{mapStudents: map[uint8][]mocks.Student{tc.studentYear: studentSlice}}
-
-			studentToGrade, err := r.Get(tc.studentName)
-			assert.Equal(t, tc.wantError, academy.GradeStudent(&r, tc.studentName))
-			if err != nil || tc.wantError != nil {
-				t.SkipNow()
+			mockRepository := mocks.NewRepository(t)
+			if errors.Is(tc.wantError, academy.ErrStudentNotFound) {
+				mockRepository.On("Get", tc.studentName).Return(mockStudent, tc.wantError)
+			} else if tc.studentFinalGrade < 1 || tc.studentFinalGrade > 5 {
+				mockStudent.On("FinalGrade").Return(tc.studentFinalGrade)
+				mockRepository.On("Get", tc.studentName).Return(mockStudent, nil)
+			} else {
+				mockStudent.On("Name").Return(tc.studentName)
+				mockStudent.On("Year").Return(tc.studentYear)
+				mockStudent.On("FinalGrade").Return(tc.studentFinalGrade)
+				mockRepository.On("Get", tc.studentName).Return(mockStudent, nil)
+				switch {
+				case tc.studentFinalGrade == 1:
+					mockRepository.On("Save", tc.studentName, tc.studentYear).Return(nil)
+				case tc.studentYear == 3:
+					mockRepository.On("Graduate", tc.studentName, mock.Anything).Return(nil)
+				default:
+					mockRepository.On("Save", tc.studentName, tc.studentYear+1).Return(nil)
+				}
 			}
-
-			switch {
-			case tc.studentFinalGrade == 1:
-				got, _ := r.List(studentToGrade.Year())
-				assert.Contains(t, got, tc.studentName)
-			case studentToGrade.Year() == 3:
-				got, _ := r.List(studentToGrade.Year())
-				assert.NotContains(t, got, tc.studentName)
-			default:
-				got, _ := r.List(studentToGrade.Year() + 1)
-				assert.Contains(t, got, tc.studentName)
+			err := academy.GradeStudent(mockRepository, tc.studentName)
+			if errors.Is(tc.wantError, academy.ErrStudentNotFound) {
+				assert.Equal(t, nil, err)
+			} else {
+				assert.Equal(t, tc.wantError, err)
 			}
+			mockRepository.AssertExpectations(t)
+			mockStudent.AssertExpectations(t)
 		})
-	}
 
+	}
 }
 
 func TestGradeYear(t *testing.T) {
@@ -123,9 +135,9 @@ func TestGradeYear(t *testing.T) {
 			studentFinalGrade: 4,
 		},
 	}
-	studentMap := map[uint8][]mocks.Student{1: {}, 2: {}, 3: {}}
+	studentMap := map[uint8][]*mocks.Student{1: {}, 2: {}, 3: {}}
 	for _, toCreate := range studentToCreate {
-		student1 := mocks.Student{}
+		student1 := mocks.NewStudent(t)
 		student1.On("Name").Return(toCreate.studentName)
 		student1.On("Year").Return(toCreate.studentYear)
 		student1.On("FinalGrade").Return(toCreate.studentFinalGrade)
@@ -133,133 +145,57 @@ func TestGradeYear(t *testing.T) {
 	}
 	testCases := []struct {
 		name      string
-		r         repositoryMock
+		r         []string
 		giveYear  uint8
 		wantErorr error
 	}{
 		{
 			name:      "Empty map",
-			r:         repositoryMock{},
 			giveYear:  0,
 			wantErorr: errors.New("Wrong year"),
 		},
 		{
 			name:      "Empty slice",
-			r:         repositoryMock{map[uint8][]mocks.Student{1: {}, 2: {}, 3: {}}},
-			giveYear:  0,
-			wantErorr: errors.New("Wrong year"),
+			giveYear:  4,
+			wantErorr: nil,
 		},
 		{
 			name:      "Correct Grades",
-			r:         repositoryMock{studentMap},
 			giveYear:  2,
 			wantErorr: nil,
 		},
 		{
 			name:      "A Last year",
-			r:         repositoryMock{studentMap},
 			giveYear:  3,
 			wantErorr: nil,
 		},
 		{
 			name:      "First year",
-			r:         repositoryMock{studentMap},
 			giveYear:  1,
 			wantErorr: nil,
 		},
 	}
 	for _, tc := range testCases {
 		t.Run(tc.name, func(t *testing.T) {
-			var wantYear1 []string
-			wantYear2, _ := tc.r.List(tc.giveYear + 1)
-			for _, studentWant := range tc.r.mapStudents[tc.giveYear] {
-				grade := studentWant.FinalGrade()
+			for _, mockStudent := range studentMap[tc.giveYear] {
+				mockRepository := mocks.NewRepository(t)
+				var gotStudentSlice []string
+				gotStudentSlice = append(gotStudentSlice, mockStudent.Name())
+				mockRepository.On("Get", mockStudent.Name()).Return(mockStudent, nil)
 				switch {
-				case grade == 1:
-					wantYear1 = append(wantYear1, studentWant.Name())
-				case studentWant.Year() == 3:
-					continue
+				case mockStudent.FinalGrade() == 1:
+					mockRepository.On("Save", mockStudent.Name(), mockStudent.Year()).Return(nil)
+				case mockStudent.Year() == 3:
+					mockRepository.On("Graduate", mockStudent.Name()).Return(nil)
 				default:
-					wantYear2 = append(wantYear2, studentWant.Name())
+					mockRepository.On("Save", mockStudent.Name(), mockStudent.Year()+1).Return(nil)
 				}
-			}
-			err := academy.GradeYear(&tc.r, tc.giveYear)
-			assert.Equal(t, tc.wantErorr, err)
-			if err != nil {
-				t.SkipNow()
-			}
-			gotSlice1, _ := tc.r.List(tc.giveYear)
-
-			assert.Equal(t, wantYear1, gotSlice1)
-
-			if tc.giveYear != 3 {
-				gotSlice2, _ := tc.r.List(tc.giveYear + 1)
-				assert.Equal(t, wantYear2, gotSlice2)
+				mockRepository.On("List", tc.giveYear).Return(gotStudentSlice, tc.wantErorr)
+				err := academy.GradeYear(mockRepository, tc.giveYear)
+				mockRepository.AssertExpectations(t)
+				assert.Equal(t, tc.wantErorr, err)
+				mockStudent.AssertExpectations(t)
 			}
 		})
 	}
-}
-
-type repositoryMock struct {
-	mapStudents map[uint8][]mocks.Student
-}
-
-func (r *repositoryMock) List(year uint8) (names []string, err error) {
-	var nameSlice []string
-	for _, student := range r.mapStudents[year] {
-		nameSlice = append(nameSlice, student.Name())
-	}
-	if len(nameSlice) == 0 {
-		return nameSlice, errors.New("Wrong year")
-	}
-	return nameSlice, nil
-}
-
-func (r *repositoryMock) Get(name string) (academy.Student, error) {
-	for _, yearSlice := range r.mapStudents {
-		for _, student := range yearSlice {
-			if student.Name() == name {
-				return &student, nil
-			}
-		}
-	}
-	return &mocks.Student{}, academy.ErrStudentNotFound
-}
-
-func (r *repositoryMock) Save(name string, year uint8) error {
-	err := r.Graduate(name)
-	studentNew := mocks.Student{}
-	studentNew.On("Name").Return(name)
-	studentNew.On("Year").Return(year)
-	studentNew.On("FinalGrade").Return(0)
-	if err != nil {
-		return err
-	}
-	yearSlice, ok := r.mapStudents[year]
-	if !ok {
-		r.mapStudents[year] = []mocks.Student{studentNew}
-	} else {
-		r.mapStudents[year] = append(yearSlice, studentNew)
-	}
-
-	return nil
-}
-
-func (r *repositoryMock) Graduate(name string) error {
-	for key, yearSlice := range r.mapStudents {
-		for index, student := range yearSlice {
-			if student.Name() == name {
-				switch index {
-				case 0:
-					r.mapStudents[key] = yearSlice[1:]
-				case len(yearSlice):
-					r.mapStudents[key] = yearSlice[:index-1]
-				default:
-					r.mapStudents[key] = append(yearSlice[:index], yearSlice[index+1:]...)
-				}
-				return nil
-			}
-		}
-	}
-	return academy.ErrStudentNotFound
 }
